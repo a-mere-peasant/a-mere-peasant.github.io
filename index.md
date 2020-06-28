@@ -1,3 +1,10 @@
-#### Welcome to my site 
-This is some generic stuff I'v put up here so people think I can do something :)
-Don't worry if you don't find anything here , cause right now it's just empty and thats what empty means.
+#### Hello There
+# This is an unreasonabl large header
+
+## This is s more *reasonable* header
+
+Why do I have two headers ?
+
+I don't know either !
+
+Do look around ,check the navbar for more links ! :)
