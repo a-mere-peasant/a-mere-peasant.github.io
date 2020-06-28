@@ -10,3 +10,5 @@ I don't know either !
 Do look around ,check the navbar for more links ! :)
 
 and yes,I know that the first header is missing an e
+
+I know that it shouldn't be an e , should be a y.:) 
