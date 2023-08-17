@@ -1,0 +1,9 @@
+{
+"scripts":
+{
+	"start":"node generator.js"
+},
+  "dependencies": {
+    "showdown": "^2.1.0"
+  }
+}
