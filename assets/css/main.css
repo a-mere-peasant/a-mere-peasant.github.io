@@ -10,21 +10,34 @@ a {
 	line-height: inherit;
 	text-decoration: underline;
 }
+#home-img{
+	position: absolute;
+	left: 95rem;
+	top: 5rem;
+	visibility:hidden;
+	transition: opacity 500ms, visibility 500ms;
+	-webkit-transition: opacity 500ms, visibility 500ms;
+}
+
 .header-name{
 	font-size:4rem;
-	color:#fff343;
+	color:transparent;
 	padding: 0px;
 	margin-top: 4rem;
 	margin-bottom: 0px;
 }
 .navigation{
 	font-size:2.7rem;
-	color: lemonchiffon;
+	color: transparent;
 	margin-top: 0px;
 }
 .navigation > a{
-	color:lemonchiffon;
+	color:transparent;
 	text-decoration:none;
+}
+.navigation > a:hover + #home-img {
+	visibility:visible;
+	opacity:1;
 }
 .navigation :not(a:first-child){
 	margin-left:1rem;
@@ -74,4 +87,34 @@ footer{
 	width: 100%;
 	justify-content: center;
 	display: flex;
+}
+#header{
+	background: linear-gradient(155deg, #50f0c6, #50eff0, #c69bf0);
+	background-size: 600% 600%;
+	-webkit-animation: header-gradient 2s ease infinite;
+	-moz-animation: header-gradient 2s ease infinite;
+	animation: header-gradient 2s ease infinite;
+	-webkit-background-clip:text;
+	background-clip:text;
+}
+
+@-webkit-keyframes header-gradient {
+	0%{background-position:96% 0%}
+	50%{background-position:5% 100%}
+	100%{background-position:96% 0%}
+}
+@-moz-keyframes header-gradient {
+	0%{background-position:96% 0%}
+	50%{background-position:5% 100%}
+	100%{background-position:96% 0%}
+}
+@keyframes header-gradient {
+	0%{background-position:96% 0%}
+	50%{background-position:5% 100%}
+	100%{background-position:96% 0%}
+}
+
+#home-img > img {
+	max-width: 10rem;
+	aspect-ratio: 1/1;
 }
