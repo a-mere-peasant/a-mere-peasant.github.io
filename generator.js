@@ -66,6 +66,7 @@ async function make_site_dir(output_dir_name){
 	}
 	try{
 		fs.promises.mkdir(output_dir_name)
+		fs.promises.cp("index.html",output_dir_name + "/index.html");
 		await	copy_to_output_dir(pages_dir);
 		copy_to_output_dir(asset_dir);
 		add_base_content(output_dir_name+"/"+pages_dir+"/homepage.html");
