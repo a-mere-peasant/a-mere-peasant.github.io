@@ -71,6 +71,7 @@ async function make_site_dir(output_dir_name){
 		await	copy_to_output_dir(pages_dir);
 		copy_to_output_dir(asset_dir);
 		add_base_content(output_dir_name+"/"+pages_dir+"/homepage.html");
+		add_base_content(output_dir_name + "/404.html");
 	}catch(err){
 		console.error("Error while making output directory",err);
 	}}

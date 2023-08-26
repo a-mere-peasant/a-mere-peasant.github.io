@@ -120,3 +120,11 @@ footer{
 	max-width: 10rem;
 	aspect-ratio: 1/1;
 }
+.text-vert{
+	text-orientation:sideways;
+	writing-mode:vertical-lr;
+}
+.div-soup-ofcourse{
+  display: flex;
+  gap: 1.5rem;
+}
