@@ -64,6 +64,7 @@ body{
 	margin-left:4rem;
 	font-size:1.2rem;
 	width:90%;
+	height:100vh;
 }
 code{	
 	background-color: #333;
@@ -127,4 +128,10 @@ footer{
 .div-soup-ofcourse{
   display: flex;
   gap: 1.5rem;
+}
+#div-404{
+	justify-content: center;
+	align-content: center;
+	height:100vh;
+	display: grid;
 }
