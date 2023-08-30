@@ -22,6 +22,8 @@ a {
 	font-size:2.7rem;
 	color: transparent;
 	margin-top: 0px;
+	display:flex;
+	justify-content:space-evenly;
 }
 .navigation > a{
 	color:transparent;
@@ -51,8 +53,14 @@ body{
 	cursor:auto;
 	margin-left:4rem;
 	font-size:1.2rem;
-	width:90%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
 	height:100vh;
+}
+.post{
+	width:50%;
+	text-align:justify;
 }
 code{	
 	background-color: #333;
