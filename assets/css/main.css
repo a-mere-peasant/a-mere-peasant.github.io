@@ -10,14 +10,6 @@ a {
 	line-height: inherit;
 	text-decoration: underline;
 }
-#home-img{
-	position: absolute;
-	left: 95rem;
-	top: 5rem;
-	visibility:hidden;
-	transition: opacity 500ms, visibility 500ms;
-	-webkit-transition: opacity 500ms, visibility 500ms;
-}
 
 .header-name{
 	font-size:4rem;
@@ -34,10 +26,6 @@ a {
 .navigation > a{
 	color:transparent;
 	text-decoration:none;
-}
-.navigation > a:hover + #home-img {
-	visibility:visible;
-	opacity:1;
 }
 .navigation :not(a:first-child){
 	margin-left:1rem;
@@ -117,10 +105,6 @@ footer{
 	100%{background-position:96% 0%}
 }
 
-#home-img > img {
-	max-width: 10rem;
-	aspect-ratio: 1/1;
-}
 .text-vert{
 	text-orientation:sideways;
 	writing-mode:vertical-lr;
