@@ -17,6 +17,7 @@
 			new_div.style.left = (Math.random()*70)+"rem";
 			new_div.style.top = (Math.random()*50)+"rem";
 			new_div.style.maxWidth = (Math.random()*40)+"rem";
+			//hsl for lighter colors all round 
 			new_div.style.color = "hsl("+Math.floor((Math.random()*360))+","+((Math.random()*10)+90)+"%,"+((Math.random()*50)+50) +"%)";
 			new_div.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
 			document.body.insertBefore(new_div,base_attach);

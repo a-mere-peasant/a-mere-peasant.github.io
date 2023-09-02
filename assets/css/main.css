@@ -112,6 +112,7 @@ body{
 		width:50%;
 		text-align:justify;
 	}
+	/* yoinked from https://bit.ly/CodePenAccentShard*/
 	body{
 		background-image: radial-gradient( rgba(255, 255, 255, 0.1) 1px, transparent 1px );
 		background-position: 50% 50%;
