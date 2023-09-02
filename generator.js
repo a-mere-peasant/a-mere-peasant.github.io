@@ -78,15 +78,16 @@ async function make_site_dir(output_dir_name){
 
 function build_post_index(post_index){
 	console.log("Building post index");
-	let post_index_html = "";
+	let post_index_html = "<div class=\"post-index\">";
 	for(const section_header in post_index){
-		post_index_html += "<h2 class=\"post_index_section\">"+section_header+"</h2><br><ul>";
+		post_index_html += "<div class=\"post-index-section\"><h2>"+section_header+"</h2><br><ul>";
 		post_index[section_header].forEach((section_item)=>{
 			post_index_html += "<li><a href=\"../_posts/"+section_item+".html\" class=\"post_section_item\">"+decodeURIComponent(section_item) + "</a></li>";
 
 		});
-		post_index_html += "</ul><br>";
+		post_index_html += "</ul><br></div>";
 	}
+	post_index_html+="</div>";
 	let  post_index_content = fs.readFileSync(output_dir+"/_pages/posts.html","utf8");
 	post_index_content = post_index_content.replace("[%post_index%]",post_index_html);
 	fs.writeFileSync(output_dir+"/_pages/posts.html",post_index_content);

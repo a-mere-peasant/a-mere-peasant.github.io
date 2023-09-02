@@ -32,6 +32,22 @@ a {
 .navigation :not(a:first-child){
 	margin-left:1rem;
 }
+.post-index{
+	display: flex;
+	justify-content: space-between;
+	margin-top:4rem;
+}
+.post-index-section{
+	position: relative;
+	background-color: rgb(16 16 16);
+	border: 1px solid rgb(255 255 255 / 5%);
+	border-radius: 1.5rem;
+	padding: 1rem;
+	width: 30%;
+}
+.post-index-section > h2{
+	text-align:center;
+}
 .post_section_item{
 	color:#f1f1f1;
 	font-size:1.2rem;
@@ -51,16 +67,31 @@ body{
 	color: #f1e1ee;
 	font-family: Poppins,sans-serif;
 	cursor:auto;
-	margin-left:4rem;
 	font-size:1.2rem;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	height:100vh;
 }
-.post{
-	width:50%;
-	text-align:justify;
+@media(width<=600px){
+	.post{
+		width:80%;
+		text-align:justify;
+	}
+	.post-index{
+		flex-direction:column;
+	}
+}
+@media(width>600px){
+	.post{
+		width:50%;
+		text-align:justify;
+	}
+	body{
+		background-image: radial-gradient( rgba(255, 255, 255, 0.1) 1px, transparent 1px );
+		background-position: 50% 50%;
+		background-size: 1.1rem 1.1rem;
+	}
 }
 code{	
 	background-color: #333;
@@ -70,7 +101,6 @@ code{
 	padding: 0.125rem 0.3125rem 0.0625rem;
 	width: fit-content;
 	display: inline-block;
-
 }
 pre {
 	background-color: transparent;
@@ -118,8 +148,8 @@ footer{
 	writing-mode:vertical-lr;
 }
 .div-soup-ofcourse{
-  display: flex;
-  gap: 1.5rem;
+	display: flex;
+	gap: 1.5rem;
 }
 #div-404{
 	justify-content: center;
