@@ -10,6 +10,10 @@ a {
 	line-height: inherit;
 	text-decoration: underline;
 }
+.warning {
+  color: #f7ac42;
+  opacity: 0.9;
+}
 .text-scale{
 	animation: text-scale 5s;
 }
