@@ -23,19 +23,13 @@ a {
 		transform:scale(5.0);
 	}
 }
-.header-name{
-	font-size:4rem;
-	color:transparent;
-	padding: 0px;
-	margin-top: 4rem;
-	margin-bottom: 0px;
-}
 .navigation{
 	font-size:2.7rem;
 	color: transparent;
 	margin-top: 0px;
 	display:flex;
 	justify-content:space-evenly;
+	align-items: center;
 }
 .navigation > a{
 	color:transparent;
@@ -43,19 +37,18 @@ a {
 }
 
 .home-card{
-  position: absolute;
-  padding: 1rem;
-  align-items: center;
-  justify-content: space-evenly;
-  background: linear-gradient(155deg, #50f0c6, #50eff0, #c69bf0);
-  background-size: 600% 600%;
-  -webkit-animation: header-gradient 2s ease infinite;
-  -moz-animation: header-gradient 2s ease infinite;
-  animation: header-gradient 2s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  top: 40%;
-  z-index:100;
+	position: absolute;
+	padding: 1rem;
+	justify-content: space-evenly;
+	background: linear-gradient(155deg, #50f0c6, #50eff0, #c69bf0);
+	background-size: 600% 600%;
+	-webkit-animation: header-gradient 2s ease infinite;
+	-moz-animation: header-gradient 2s ease infinite;
+	animation: header-gradient 2s ease infinite;
+	-webkit-background-clip: text;
+	background-clip: text;
+	top: 40%;
+	z-index:100;
 }
 .post-index{
 	display: flex;
@@ -137,9 +130,9 @@ a:hover {
 	cursor: pointer;
 }
 .home-img {
-  max-width: 5.7rem;
-  aspect-ratio: 1/1;
-  margin: 1rem;
+	max-width: 5.7rem;
+	aspect-ratio: 1/1;
+	margin: 1rem;
 }
 footer{
 	bottom:0px;
@@ -156,6 +149,7 @@ footer{
 	animation: header-gradient 2s ease infinite;
 	-webkit-background-clip:text;
 	background-clip:text;
+	width: 30rem;
 }
 
 @-webkit-keyframes header-gradient {
