@@ -1,0 +1,3 @@
+Refactoring in hindsight builds better foresight.
+Mind the coefficient, go beyond asymptotic notation.
+Assumptions about abstractions can be deadly.

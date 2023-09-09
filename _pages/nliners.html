@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+	[%externals%]
+	<body>
+	<script>
+	var n = 0;
+	const nliners_string = "[%nliners%]";
+	const nliners = nliners_string.split("~");
+	function getnliner(){
+	nliner = document.getElementById("nliner");
+	nliner.innerText = nliners[(n % nliners.length)];
+	n++;
+	}
+	addEventListener("DOMContentLoaded",()=>getnliner())
+	</script>
+	[%header%]
+	
+	<div class="warning">
+		Could be a whole post, but this works too
+	</div>
+	<div class = "nliner">
+	<div id="nliner">
+	</div>
+	<a onclick="getnliner()" style="color:#50eff0;margin:2rem;">Next</a>
+	</div>
+	</body>
+</html>

@@ -11,6 +11,8 @@ const header = get_file_content(header_file_path);
 const post_layout = get_file_content(layout_dir+"/post.html");
 const externals = get_file_content(layout_dir+"/externals.html");
 const footer = get_file_content(layout_dir+"/footer.html");
+const nliners = get_file_content("nliners.txt").trim().replaceAll("\n","~");
+console.log(nliners);
 const post_output_dir = output_dir+"/"+post_dir;
 let post_index ={};
 
@@ -30,7 +32,6 @@ async function build_site_posts(){
 			sub_index_files.forEach(function(sub_file){	
 				post_index[file].push(make_post(sub_file,post_dir+"/"+file));
 			});
-
 		}
 	});
 }
@@ -72,6 +73,7 @@ async function make_site_dir(output_dir_name){
 		copy_to_output_dir(asset_dir);
 		add_base_content(output_dir_name+"/"+pages_dir+"/homepage.html");
 		add_base_content(output_dir_name + "/404.html");
+		add_base_content(output_dir_name+"/"+pages_dir+"/nliners.html");
 	}catch(err){
 		console.error("Error while making output directory",err);
 	}}
@@ -93,6 +95,7 @@ function build_post_index(post_index){
 	fs.writeFileSync(output_dir+"/_pages/posts.html",post_index_content);
 	add_base_content(output_dir+"/"+pages_dir+"/posts.html");
 }
+
 
 async function copy_to_output_dir(dir_name){
 	try{
@@ -120,6 +123,7 @@ function add_base_content(file){
 		content = content.replace("[%externals%]",externals);
 		content = content.replace("[%header%]",header);
 		content = content.replace("[%footer%]",footer);
+		content = content.replace("[%nliners%]",nliners)
 		fs.writeFile(file,content,function(err){
 			if(err){
 				console.error("Error while writing file:",file,err);
