@@ -8,11 +8,11 @@ pre {
 a {
 	color: white;
 	line-height: inherit;
-	text-decoration: underline;
+	text-decoration: none;
 }
 .warning {
-  color: #f7ac42;
-  opacity: 0.9;
+	color: #f7ac42;
+	opacity: 0.9;
 }
 .text-scale{
 	animation: text-scale 5s;
@@ -26,6 +26,18 @@ a {
 		opacity:0;
 		transform:scale(5.0);
 	}
+}
+.nliner{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	flex-direction: column;
+	position: absolute;
+	top: 30rem;
+	width: 50%;
+	word-break: break-word;
+	text-align: center;
 }
 .navigation{
 	font-size:2.7rem;
@@ -147,13 +159,13 @@ footer{
 }
 #header{
 	background: linear-gradient(155deg, #50f0c6, #50eff0, #c69bf0);
-	background-size: 600% 600%;
+	background-size: 100% 100%;
 	-webkit-animation: header-gradient 2s ease infinite;
 	-moz-animation: header-gradient 2s ease infinite;
 	animation: header-gradient 2s ease infinite;
 	-webkit-background-clip:text;
 	background-clip:text;
-	width: 30rem;
+	width: 75rem;
 }
 
 @-webkit-keyframes header-gradient {
