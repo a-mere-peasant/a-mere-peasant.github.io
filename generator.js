@@ -12,7 +12,6 @@ const post_layout = get_file_content(layout_dir+"/post.html");
 const externals = get_file_content(layout_dir+"/externals.html");
 const footer = get_file_content(layout_dir+"/footer.html");
 const nliners = get_file_content("nliners.txt").trim().replaceAll("\n","~");
-console.log(nliners);
 const post_output_dir = output_dir+"/"+post_dir;
 let post_index ={};
 
