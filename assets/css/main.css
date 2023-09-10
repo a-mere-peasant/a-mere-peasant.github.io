@@ -1,3 +1,8 @@
+html{
+	height:100%;
+	width:100%;
+	margin:0px;
+}
 pre {
 	white-space: pre-wrap;
 	white-space: -moz-pre-wrap;
@@ -13,6 +18,7 @@ a {
 .warning {
 	color: #f7ac42;
 	opacity: 0.9;
+	text-align: center;
 }
 .text-scale{
 	animation: text-scale 5s;
@@ -54,17 +60,9 @@ a {
 
 .home-card{
 	position: absolute;
-	padding: 1rem;
-	justify-content: space-evenly;
-	background: linear-gradient(155deg, #50f0c6, #50eff0, #c69bf0);
-	background-size: 600% 600%;
-	-webkit-animation: header-gradient 2s ease infinite;
-	-moz-animation: header-gradient 2s ease infinite;
-	animation: header-gradient 2s ease infinite;
-	-webkit-background-clip: text;
-	background-clip: text;
 	top: 40%;
-	z-index:100;
+	z-index: 100;
+	width: 100%;
 }
 .post-index{
 	display: flex;
@@ -105,18 +103,19 @@ body{
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height:100vh;
+	height:100%;
+	margin:0px;
 }
-@media(width<=600px){
+@media(orientation:portrait){
 	.post{
-		width:80%;
+		width:90%;
 		text-align:justify;
 	}
 	.post-index{
 		flex-direction:column;
 	}
 }
-@media(width>600px){
+@media(orientation:landscape){
 	.post{
 		width:50%;
 		text-align:justify;
@@ -165,7 +164,7 @@ footer{
 	animation: header-gradient 2s ease infinite;
 	-webkit-background-clip:text;
 	background-clip:text;
-	width: 75rem;
+	width: 100%;
 }
 
 @-webkit-keyframes header-gradient {
