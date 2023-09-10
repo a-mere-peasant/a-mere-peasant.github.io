@@ -2,6 +2,26 @@
 <html>
 [%externals%]
 <body>
+	<script>
+		addEventListener("DOMContentLoaded", () => {
+			document.querySelectorAll(".post-index-section-list a")
+				.forEach(x=>x.addEventListener("mouseover",(e)=>{
+					document.querySelector(".text-blink").classList.remove("text-blink");
+					e.target.classList.add("text-blink");
+				}))
+			document.getElementById("sh-1").click();
+
+		});
+		function get_section_list(e)
+		{
+			const header_number = e.id.split("-")[1];
+			document.querySelectorAll(".post-index-section-list").forEach(x=>x.style.display="none")
+			let section_list = document.getElementById("sl-"+header_number);
+			section_list.style.display="block";
+			document.documentElement.style.setProperty("--accent-top", (e.getBoundingClientRect().top - section_list.getBoundingClientRect().top + 10)+"px");
+			section_list.querySelector("a").classList.add("text-blink");
+		}
+	</script>
 	[%header%]
 	<div class="warning">
 		! Some of these posts might contain strings that the writer thought was funny and are not actually technical advice, reader discretion is advised !

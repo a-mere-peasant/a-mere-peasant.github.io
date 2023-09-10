@@ -2,6 +2,7 @@ html{
 	height:100%;
 	width:100%;
 	margin:0px;
+	--accent-top:10%;
 }
 pre {
 	white-space: pre-wrap;
@@ -15,22 +16,21 @@ a {
 	line-height: inherit;
 	text-decoration: none;
 }
+
 .warning {
 	color: #f7ac42;
 	opacity: 0.9;
 	text-align: center;
 }
-.text-scale{
-	animation: text-scale 5s;
+.text-blink{
+	animation: text-blink 1s ease infinite;
 }
-@keyframes text-scale{
+@keyframes text-blink{
 	0%{
-		opacity:1;
-		transform:scale(1.0);
+		color:#50f0c6;
 	}
 	100%{
-		opacity:0;
-		transform:scale(5.0);
+		color:white;
 	}
 }
 .nliner{
@@ -47,7 +47,6 @@ a {
 }
 .navigation{
 	font-size:2.7rem;
-	color: transparent;
 	margin-top: 0px;
 	display:flex;
 	justify-content:space-evenly;
@@ -65,29 +64,58 @@ a {
 	width: 100%;
 }
 .post-index{
-	display: flex;
-	justify-content: space-between;
-	margin-top:4rem;
+	justify-content: center;
+	margin-top: 4rem;
+	display:flex;
+	width:100%;
+	height:100%;
 }
-.post-index-section{
-	position: relative;
-	background-color: rgb(16 16 16);
-	border: 1px solid rgb(255 255 255 / 5%);
-	border-radius: 1.5rem;
-	padding: 1rem;
-	width: 30%;
+.index-lists{
+	position:relative;
+	font-size:1.5rem;
+	text-align:left;
+	width:65%;
 }
-.post-index-section > h2{
+.index-headers{
+	position:relative;
 	text-align:center;
+	width:35%;
 }
-.post_section_item{
-	color:#f1f1f1;
-	font-size:1.2rem;
-	text-decoration:none;
-}	
+.index-lists:before {  
+	content: "";
+	height: 4rem;
+	width: 1px;  
+	position: absolute;  
+	left: -1px;
+	top: var(--accent-top);
+	transition: top, opacity;
+	transition-duration: 600ms;
+	transition-timing-function: ease;
+	background: linear-gradient(
+	transparent,
+	white,
+	transparent
+	);
+	opacity: 1;
+}
+.post-index-section-header{
+	height:30%;
+	font-size:1.5rem;
+}
+.post-index-section-list{
+	padding-left:7rem;
+	margin-top:2rem;
+}
+.post-index-section-list > ul{
+ list-style-type: none;
+  padding: 0; 
+  margin: 0; 
+}
+.post-index-section-list > ul > li{
+	margin-bottom:1rem;
+}
 ul, ol, dl {
 	font-family: inherit;
-	font-size: 1rem;
 	line-height: 1.6;
 	list-style-position: outside;
 }
@@ -110,9 +138,6 @@ body{
 	.post{
 		width:90%;
 		text-align:justify;
-	}
-	.post-index{
-		flex-direction:column;
 	}
 }
 @media(orientation:landscape){
@@ -157,6 +182,9 @@ footer{
 	display: flex;
 }
 #header{
+	width: 100%;
+}
+.gradient-text{
 	background: linear-gradient(155deg, #50f0c6, #50eff0, #c69bf0);
 	background-size: 100% 100%;
 	-webkit-animation: header-gradient 2s ease infinite;
@@ -164,7 +192,7 @@ footer{
 	animation: header-gradient 2s ease infinite;
 	-webkit-background-clip:text;
 	background-clip:text;
-	width: 100%;
+	color: transparent;
 }
 
 @-webkit-keyframes header-gradient {
