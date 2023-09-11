@@ -22,16 +22,11 @@ a {
 	opacity: 0.9;
 	text-align: center;
 }
-.text-blink{
-	animation: text-blink 1s ease infinite;
+.active{
+	color:white;
 }
-@keyframes text-blink{
-	0%{
-		color:#50f0c6;
-	}
-	100%{
-		color:white;
-	}
+.inactive{
+	color:#7e7e7e;
 }
 .nliner{
 	display: flex;

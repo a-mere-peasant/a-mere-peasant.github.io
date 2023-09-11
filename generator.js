@@ -93,7 +93,7 @@ function build_post_index(post_index){
 		post_index_html += `<div class="post-index-section-list" id="sl-${counter}"><ul>`;
 		post_index_html += post_index[section_header].map(section_item =>
 			`<li>
-			<a href="../_posts/${section_item}.html" class="post_section_item">${decodeURIComponent(section_item)}</a>
+			<a href="../_posts/${section_item}.html" class="post_section_item inactive">${decodeURIComponent(section_item)}</a>
 			</li>`
 		).join('');
 		post_index_html += "</ul></div>";
