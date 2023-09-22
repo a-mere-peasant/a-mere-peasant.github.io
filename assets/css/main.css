@@ -61,9 +61,11 @@ a {
 .post-index{
 	justify-content: center;
 	margin-top: 4rem;
-	display:flex;
-	width:100%;
-	height:100%;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
 }
 .index-lists{
 	position:relative;
@@ -76,23 +78,6 @@ a {
 	text-align:center;
 	width:35%;
 }
-.index-lists:before {  
-	content: "";
-	height: 4rem;
-	width: 1px;  
-	position: absolute;  
-	left: -1px;
-	top: var(--accent-top);
-	transition: top, opacity;
-	transition-duration: 600ms;
-	transition-timing-function: ease;
-	background: linear-gradient(
-	transparent,
-	white,
-	transparent
-	);
-	opacity: 1;
-}
 .post-index-section-header{
 	height:30%;
 	font-size:1.5rem;
@@ -102,9 +87,9 @@ a {
 	margin-top:2rem;
 }
 .post-index-section-list > ul{
- list-style-type: none;
-  padding: 0; 
-  margin: 0; 
+	list-style-type: none;
+	padding: 0; 
+	margin: 0; 
 }
 .post-index-section-list > ul > li{
 	margin-bottom:1rem;
