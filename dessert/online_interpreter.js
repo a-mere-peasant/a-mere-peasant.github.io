@@ -16,8 +16,9 @@ interpreter.env.outlet.error = function(s){
 }
 
 prg_input.addEventListener("keydown",function(e){
-	if(e.code == "Enter")
-		input_prg(prg_input.innerText);
+	if(e.code == "Enter"){
+		input_prg(prg_input.value);
+		}
 }
 );
 
@@ -35,7 +36,7 @@ function insert_into_console(s){
 
 function update_env(){
 	env_store.innerText = make_env_store();
-	env_isVB.innerText = `inVB : ${interpreter.env.isInVisualBlock}`;		
+	env_isVB.innerText = `inVB : ${interpreter.env.isInVisualBlock == 1?"Yes":"No"}`;		
 	env_VB.innerText = `VB : ${interpreter.env.visualBlock}`;		
 	env_opr.innerText = `inVB : ${interpreter.env.opr}`;		
 	env_oprL.innerText = `oprL : ${interpreter.env.oprL}`;		
@@ -50,5 +51,6 @@ function make_env_store(){
 		store_str+=" ";
 	}
 	store_str+="^";
+	return store_str;
 }
 
