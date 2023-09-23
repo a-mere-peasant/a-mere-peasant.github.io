@@ -6,6 +6,7 @@ const layout_dir = "_layouts";
 const output_dir = "_site";
 const asset_dir = "assets";
 const pages_dir = "_pages";
+const allFiles = "All"
 const header_file_path = "_layouts/header.html"
 const header = get_file_content(header_file_path); 
 const post_layout = get_file_content(layout_dir+"/post.html");
@@ -13,6 +14,12 @@ const externals = get_file_content(layout_dir+"/externals.html");
 const footer = get_file_content(layout_dir+"/footer.html");
 const nliners = get_file_content("nliners.txt").trim().replaceAll("\n","~");
 const post_output_dir = output_dir+"/"+post_dir;
+const post_index_mapping = {
+	"Posts from the past":"Past",
+	"Posts from the present":"Present",
+	"Posts from the future":"Future",
+}
+
 let post_index ={};
 
 build();
@@ -24,12 +31,15 @@ async function build(){
 async function build_site_posts(){
 	await fs.promises.mkdir(post_output_dir);
 	const post_files = await fs.promises.readdir(post_dir,"utf-8");
+	post_index[allFiles] = [];
 	post_files.forEach(function(file) {
 		if(fs.statSync(post_dir+"/"+file).isDirectory()){
-			post_index[file] = [];
+			console.log(file, post_index_mapping[file]);
+			post_index[post_index_mapping[file]] = [];
 			const sub_index_files = fs.readdirSync(post_dir+"/"+file,"utf-8");
 			sub_index_files.forEach(function(sub_file){	
-				post_index[file].push(make_post(sub_file,post_dir+"/"+file));
+				post_index[post_index_mapping[file]].push(make_post(sub_file,post_dir+"/"+file));
+				post_index[allFiles].push(encodeURIComponent(sub_file.split(".")[0]));
 			});
 		}
 	});
@@ -83,14 +93,14 @@ function build_post_index(post_index){
 	let counter = 1;
 	for(const section_header in post_index){
 		post_index_html += `<div id="sh-${counter}" class="post-index-section-header" onclick="get_section_list(this)">
-					<h2>${section_header}</h2>
+					${section_header}
 				    </div>`
 		counter++;
 	}
 	post_index_html+=`</div><div class="index-lists">`;
 	counter=1;
 	for(const section_header in post_index){
-		post_index_html += `<div class="post-index-section-list" id="sl-${counter}"><ul>`;
+		post_index_html += `<div class="post-index-section-list" id="${section_header}"><ul>`;
 		post_index_html += post_index[section_header].map(section_item =>
 			`<li>
 			<a href="../_posts/${section_item}.html" class="post_section_item inactive">${decodeURIComponent(section_item)}</a>

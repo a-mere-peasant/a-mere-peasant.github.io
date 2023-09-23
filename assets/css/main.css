@@ -40,6 +40,9 @@ a {
 	word-break: break-word;
 	text-align: center;
 }
+.card-active{
+	background: #fff !important;
+color: black;}
 .navigation{
 	font-size:2.7rem;
 	margin-top: 0px;
@@ -59,7 +62,6 @@ a {
 	width: 100%;
 }
 .post-index{
-	justify-content: center;
 	margin-top: 4rem;
 	display: flex;
 	width: 100%;
@@ -70,16 +72,22 @@ a {
 .index-lists{
 	position:relative;
 	font-size:1.5rem;
-	text-align:left;
-	width:65%;
+	width:45%;
 }
 .index-headers{
 	position:relative;
 	text-align:center;
-	width:35%;
+	width:40%;
+	display: flex;
+	justify-content: space-evenly;
 }
 .post-index-section-header{
-	height:30%;
+	font-size: 1.5rem;
+	background: transparent;
+	padding: 1rem;
+	border: 1px solid white;
+	border-block-style: solid;
+	border-radius: 0.3rem;
 	font-size:1.5rem;
 }
 .post-index-section-list{
@@ -118,6 +126,12 @@ body{
 	.post{
 		width:90%;
 		text-align:justify;
+	}
+	.index-headers{
+		width:70%;
+	}
+	.index-lists{
+		width:90%;
 	}
 }
 @media(orientation:landscape){

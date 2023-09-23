@@ -12,19 +12,21 @@
 					e.target.classList.remove("inactive");
 					e.target.classList.add("active");
 				}))
-			document.getElementById("sh-1").click();
-
+			document.getElementById("sh-1").classList.add("card-active");
+			let first_post  = document.querySelector(".post_section_item");
+			first_post.classList.add("active");
+			first_post.classList.remove("inactive");
 		});
 		function get_section_list(e)
 		{
-			const header_number = e.id.split("-")[1];
 			document.querySelectorAll(".post-index-section-list").forEach(x=>x.style.display="none")
-			let section_list = document.getElementById("sl-"+header_number);
+			let section_list = document.getElementById(e.innerText);
+			document.querySelector(".card-active").classList.remove("card-active");
+			e.classList.add("card-active");
 			section_list.style.display="block";
 			let active_element = section_list.querySelector("a");
 			active_element.classList.add("active");
 			active_element.classList.remove("inactive");
-			document.documentElement.style.setProperty("--accent-top", (e.getBoundingClientRect().top - section_list.getBoundingClientRect().top + 10)+"px");
 		}
 	</script>
 	[%header%]
