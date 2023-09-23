@@ -12,7 +12,9 @@
 					e.target.classList.remove("inactive");
 					e.target.classList.add("active");
 				}))
-			document.getElementById("sh-1").classList.add("card-active");
+			let all = document.getElementById("sh-1")
+			all.classList.add("card-active");
+			all.click();
 			let first_post  = document.querySelector(".post_section_item");
 			first_post.classList.add("active");
 			first_post.classList.remove("inactive");
