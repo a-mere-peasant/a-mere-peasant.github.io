@@ -6,6 +6,7 @@ const layout_dir = "_layouts";
 const output_dir = "_site";
 const asset_dir = "assets";
 const pages_dir = "_pages";
+const dessert_dir = "dessert";
 const allFiles = "All"
 const header_file_path = "_layouts/header.html"
 const header = get_file_content(header_file_path); 
@@ -80,6 +81,8 @@ async function make_site_dir(output_dir_name){
 		fs.promises.cp("404.html",output_dir_name + "/404.html");
 		await	copy_to_output_dir(pages_dir);
 		copy_to_output_dir(asset_dir);
+		copy_to_output_dir(dessert_dir);
+		add_base_content(output_dir_name+"/"+pages_dir+"/dessert.html");
 		add_base_content(output_dir_name+"/"+pages_dir+"/homepage.html");
 		add_base_content(output_dir_name + "/404.html");
 		add_base_content(output_dir_name+"/"+pages_dir+"/nliners.html");
