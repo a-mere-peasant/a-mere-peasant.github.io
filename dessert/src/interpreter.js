@@ -213,4 +213,3 @@ export class Interpreter {
 	}
 }
 
-env.inlet.input();
