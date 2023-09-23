@@ -12,6 +12,6 @@ const handler = {
   }
 };
 
-const visual_env = new(interpreter.env,handler);
+const visual_env = new Proxy(interpreter.env,handler);
 console.log(visual_env.opr);
 
