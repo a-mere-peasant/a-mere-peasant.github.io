@@ -2,7 +2,6 @@ html{
 	height:100%;
 	width:100%;
 	margin:0px;
-	--accent-top:10%;
 }
 pre {
 	white-space: pre-wrap;
@@ -16,7 +15,27 @@ a {
 	line-height: inherit;
 	text-decoration: none;
 }
-
+#interpreter{
+	display: flex;
+	margin-top: 5rem;
+	width: 70%;
+}
+#env{
+	width: 50%;
+	display: grid;
+	grid-template-rows: repeat(3,1fr);
+	grid-template-columns: repeat(3,1fr);
+	font-size: 1.7rem;
+}
+#env-store{
+	grid-column: 1/span3;
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+#env-VB{
+	grid-column: 2/span2;
+}
 .warning {
 	color: #f7ac42;
 	opacity: 0.9;
