@@ -12,7 +12,7 @@ interpreter.env.outlet.print = function(s){
 }
 
 interpreter.env.outlet.error = function(s){
-	insert_into_console(s);
+	insert_into_console(s,{is_error:true,input:false});
 }
 
 prg_input.addEventListener("keydown",function(e){
@@ -23,13 +23,13 @@ prg_input.addEventListener("keydown",function(e){
 );
 
 function input_prg(val){
-	insert_into_console(val,input=true);
+	insert_into_console(val,{is_error:false,input:true});
 	interpreter.env.inlet.input(val,false);
 	update_env();
 
 }
 
-function insert_into_console(s,is_error=false,input=false){
+function insert_into_console(s,{is_error=false,input=false}){
 	if(is_error){
 	console.innerHTML+= `<br><p class="error">${s}</p>`;
 	}else if(input){
