@@ -26,6 +26,8 @@ function input_prg(val){
 	insert_into_console(val,{is_error:false,input:true});
 	interpreter.env.inlet.input(val,false);
 	update_env();
+	prg_input.innerText="";
+	console.scrollTop = console.scrollHeight;
 
 }
 
