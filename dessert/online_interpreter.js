@@ -23,15 +23,20 @@ prg_input.addEventListener("keydown",function(e){
 );
 
 function input_prg(val){
-	insert_into_console(val);
+	insert_into_console(val,input=true);
 	interpreter.env.inlet.input(val,false);
 	update_env();
 
 }
 
-function insert_into_console(s){
-
+function insert_into_console(s,is_error=false,input=false){
+	if(is_error){
+	console.innerHTML+= `<br><p class="error">${s}</p>`;
+	}else if(input){
+	console.innerHTML+= `<br><p>>${s}</p>`;
+	}else{
 	console.innerHTML+= `<br><p>${s}</p>`;
+	}
 }
 
 function update_env(){
@@ -51,11 +56,11 @@ function make_env_store(){
 	const ptrpos = 2+2*interpreter.env.ptr;
 	let start,end =0;
 	if(interpreter.env.isInVisualBlock){
-		end = interpreter.env.visualBlockStart;
-		start = interpreter.env.ptr;
+		end = 2+interpreter.env.visualBlockStart;
+		start = 2+interpreter.env.ptr;
 		if(interpreter.env.ptr>interpreter.env.visualBlockStart){
-			start = interpreter.env.visualBlockStart;
-			end = interpreter.env.ptr;
+			start = 2+interpreter.env.visualBlockStart;
+			end = 2+interpreter.env.ptr;
 		}
 	}
 	for(let i=0;i<19;i++){

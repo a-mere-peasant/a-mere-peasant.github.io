@@ -45,6 +45,7 @@ white-space: pre-wrap;
 	height: 100%;
 	width: 100%;
 	overflow: scroll;
+	background:#0f0f0f;
 }
 #prg-input-console{
 	width: 50%;
