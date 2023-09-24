@@ -52,7 +52,7 @@ function update_env(){
 function make_env_store(){
 	let store_str = "[ ";
 	interpreter.env.store.forEach((b)=>store_str += b+" ");
-	store_str+="]\n ";
+	store_str+="]\n";
 	const ptrpos = 2+2*interpreter.env.ptr;
 	let start,end =0;
 	if(interpreter.env.isInVisualBlock){

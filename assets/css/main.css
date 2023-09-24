@@ -29,7 +29,7 @@ a {
 	font-size: 1.7rem;
 	background: black;
 	font-family: mono;
-	padding-bottom: 2rem;
+	padding: 2rem;
 }
 #env-store{
 	grid-column: 1/span3;
@@ -45,7 +45,6 @@ a {
 	height: 100%;
 	width: 100%;
 	overflow: scroll;
-	white-space: pre-line;
 	background:#0f0f0f;
 }
 #prg-input-console{
@@ -64,6 +63,9 @@ a {
 	color: #f7ac42;
 	opacity: 0.9;
 	text-align: center;
+}
+.error{
+	color:#f94141;
 }
 .active{
 	color:white;
