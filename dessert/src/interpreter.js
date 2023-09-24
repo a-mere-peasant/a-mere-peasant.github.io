@@ -92,7 +92,7 @@ export class Interpreter {
 		}
 	}
 	moveRight(){
-		if(env.ptr<env.store.length)
+		if(env.ptr<env.store.length-1)
 			env.ptr++;
 		if(env.opr && !env.isInVisualBlock)
 		{
