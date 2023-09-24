@@ -24,7 +24,7 @@ prg_input.addEventListener("keydown",function(e){
 
 function input_prg(val){
 	insert_into_console(val);
-	interpreter.env.inlet.input(val);
+	interpreter.env.inlet.input(val,false);
 	update_env();
 
 }
@@ -62,7 +62,7 @@ function make_env_store(){
 		if(i==ptrpos){
 			store_str+="^";
 		}else if(interpreter.env.isInVisualBlock && i>=start && i<=end){
-			store_str+="_";
+			store_str+="_ ";
 		}else{
 			store_str+=" ";
 		}
