@@ -5,7 +5,7 @@ const env_VB = document.getElementById("env-VB");
 const env_opr = document.getElementById("env-opr");
 const env_oprR = document.getElementById("env-oprR");
 const env_oprL = document.getElementById("env-oprL");
-const console = document.getElementById("prg-input-console");
+const console = document.getElementById("console");
 const prg_input = document.getElementById("program-input");
 interpreter.env.outlet.print = function(s){
 	insert_into_console(s);
@@ -18,7 +18,7 @@ interpreter.env.outlet.error = function(s){
 prg_input.addEventListener("keydown",function(e){
 	if(e.code == "Enter"){
 		input_prg(prg_input.value);
-		}
+	}
 }
 );
 
@@ -36,7 +36,7 @@ function insert_into_console(s){
 
 function update_env(){
 	env_store.innerText = make_env_store();
-	env_isVB.innerText = `inVB : ${interpreter.env.isInVisualBlock == 1?"Yes":"No"}`;		
+	env_isVB.innerText = `inVB : ${interpreter.env.isInVisualBlock}`;		
 	env_VB.innerText = `VB : ${interpreter.env.visualBlock}`;		
 	env_opr.innerText = `inVB : ${interpreter.env.opr}`;		
 	env_oprL.innerText = `oprL : ${interpreter.env.oprL}`;		
@@ -47,10 +47,25 @@ function make_env_store(){
 	let store_str = "[ ";
 	interpreter.env.store.forEach((b)=>store_str += b+" ");
 	store_str+="]\n ";
-	for(let i=0;i<2*interpreter.env.ptr + 1;i++){
-		store_str+=" ";
+	const ptrpos = 2+2*interpreter.env.ptr;
+	let start,end =0;
+	if(interpreter.env.isInVisualBlock){
+		end = interpreter.env.visualBlockStart;
+		start = interpreter.env.ptr;
+		if(interpreter.env.ptr>interpreter.env.visualBlockStart){
+			start = interpreter.env.visualBlockStart;
+			end = interpreter.env.ptr;
+		}
 	}
-	store_str+="^";
+	for(let i=0;i<19;i++){
+		if(i==ptrpos){
+			store_str+="^";
+		}else if(interpreter.env.isInVisualBlock && i>=start && i<=end){
+			store_str+="_";
+		}else{
+			store_str+=" ";
+		}
+	}
 	return store_str;
 }
 
