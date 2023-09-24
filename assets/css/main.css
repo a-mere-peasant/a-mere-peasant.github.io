@@ -22,21 +22,21 @@ a {
 	height:50vh;
 }
 #env{
-width: 50%;
-display: grid;
-grid-template-rows: repeat(3,1fr);
-grid-template-columns: repeat(3,1fr);
-font-size: 1.7rem;
-background: black;
-font-family: mono;
-padding-bottom: 2rem;
+	width: 50%;
+	display: grid;
+	grid-template-rows: repeat(3,1fr);
+	grid-template-columns: repeat(3,1fr);
+	font-size: 1.7rem;
+	background: black;
+	font-family: mono;
+	padding-bottom: 2rem;
 }
 #env-store{
 	grid-column: 1/span3;
 	font-size: 3rem;
-	text-align: center;
+	text-align: left;
 	margin-bottom: 2rem;
-white-space: pre-wrap;
+	white-space: pre-wrap;
 }
 #env-VB{
 	grid-column: 2/span2;
@@ -45,6 +45,7 @@ white-space: pre-wrap;
 	height: 100%;
 	width: 100%;
 	overflow: scroll;
+	white-space: pre-line;
 	background:#0f0f0f;
 }
 #prg-input-console{

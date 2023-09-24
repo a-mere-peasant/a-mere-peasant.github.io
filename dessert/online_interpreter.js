@@ -31,11 +31,11 @@ function input_prg(val){
 
 function insert_into_console(s,{is_error=false,input=false}){
 	if(is_error){
-	console.innerHTML+= `<br><p class="error">${s}</p>`;
+	console.innerHTML+= `\n<p class="error">${s}</p>`;
 	}else if(input){
-	console.innerHTML+= `<br><p>>${s}</p>`;
+	console.innerHTML+= `\n<p>>${s}</p>`;
 	}else{
-	console.innerHTML+= `<br><p>${s}</p>`;
+	console.innerHTML+= `\n<p>${s}</p>`;
 	}
 }
 
@@ -68,6 +68,7 @@ function make_env_store(){
 			store_str+="^";
 		}else if(interpreter.env.isInVisualBlock && i>=start && i<=end){
 			store_str+="_ ";
+			i++;
 		}else{
 			store_str+=" ";
 		}
