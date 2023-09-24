@@ -35,12 +35,13 @@ function insert_into_console(s){
 }
 
 function update_env(){
+	env_store.innerHTML = "";
 	env_store.innerText = make_env_store();
-	env_isVB.innerText = `inVB : ${interpreter.env.isInVisualBlock}`;		
-	env_VB.innerText = `VB : ${interpreter.env.visualBlock}`;		
-	env_opr.innerText = `inVB : ${interpreter.env.opr}`;		
-	env_oprL.innerText = `oprL : ${interpreter.env.oprL}`;		
-	env_oprR.innerText = `oprR : ${interpreter.env.oprR}`;		
+	env_isVB.innerText = `inVB \n ${interpreter.env.isInVisualBlock}`;		
+	env_VB.innerText = `VB \n ${interpreter.env.visualBlock}`;		
+	env_opr.innerText = `inVB \n ${interpreter.env.opr}`;		
+	env_oprL.innerText = `oprL \n ${interpreter.env.oprL}`;		
+	env_oprR.innerText = `oprR \n ${interpreter.env.oprR}`;		
 }
 
 function make_env_store(){

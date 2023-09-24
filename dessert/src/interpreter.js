@@ -6,7 +6,7 @@ export const env = {
 	opr:null,
 	oprL:null,
 	oprR:null,
-	isInVisualBlock : 0,
+	isInVisualBlock : false,
 	visualBlockStart:0,
 	visualBlock:0,
 	atVisualEnd:false,
@@ -27,9 +27,9 @@ export const env = {
 		}
 	},
 	inlet:{
-		input(input){
+		input(input,debugMode){
 			const elexer = new lexer.Lexer();
-			const interpreter = new Interpreter(elexer.tokenize(input),true)
+			const interpreter = new Interpreter(elexer.tokenize(input),debugMode)
 			interpreter.run();
 		}
 	}
