@@ -178,6 +178,20 @@ body{
 	.index-lists{
 		width:90%;
 	}
+	#interpreter{
+		width: 80%;
+		height:70vh;
+		flex-direction:column;
+	}
+	#env{
+		width:unset;
+		height:50%;
+	}
+	#prg-input-console{
+		margin-top: 1rem;
+		width:unset;
+	}
+	
 }
 @media(orientation:landscape){
 	.post{
