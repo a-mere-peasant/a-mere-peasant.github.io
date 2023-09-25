@@ -58,11 +58,11 @@ function make_env_store(){
 	const ptrpos = 2+2*interpreter.env.ptr;
 	let start,end =0;
 	if(interpreter.env.isInVisualBlock){
-		end = 2+interpreter.env.visualBlockStart;
-		start = 2+interpreter.env.ptr;
+		end = 2+2*interpreter.env.visualBlockStart;
+		start = 2+2*interpreter.env.ptr;
 		if(interpreter.env.ptr>interpreter.env.visualBlockStart){
 			start = 2+interpreter.env.visualBlockStart;
-			end = 2+interpreter.env.ptr;
+			end = 2+2*interpreter.env.ptr;
 		}
 	}
 	for(let i=0;i<19;i++){
