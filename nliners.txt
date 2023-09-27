@@ -2,3 +2,4 @@ Refactoring in hindsight builds better foresight.
 Mind the coefficient, go beyond asymptotic notation.
 Assumptions about abstractions can be deadly.
 When thinking about distributed storage, remember the CAP theorem. Data: No CAP. Or as the senior devs say it, you can't have Consitency, Availability and Parition tolerance so you must choose two.
+Don't use generalist components for building small stuff.
