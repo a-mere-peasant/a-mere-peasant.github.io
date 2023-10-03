@@ -126,8 +126,9 @@ export class Interpreter {
 			env.oprL = env.visualBlock;
 			env.visualBlock = 0;
 			env.atVisualEnd = false;
+		}else{
+			env.oprL = env.store[env.ptr];
 		}
-
 	}
 	operate(){
 		if(env.opr==null) this.error(`Error : no operator found`);
