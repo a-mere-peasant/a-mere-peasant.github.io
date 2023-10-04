@@ -138,6 +138,9 @@ export class Interpreter {
 			env.visualBlock = 0;
 			env.atVisualEnd = false;
 		}
+		else{
+			env.oprR = env.store[env.ptr]
+		}
 		switch(env.opr){
 			case "+":
 				this.add();
