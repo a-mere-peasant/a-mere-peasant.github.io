@@ -15,6 +15,20 @@ a {
 	line-height: inherit;
 	text-decoration: none;
 }
+section{
+	min-height:100vh;
+	width:100%;
+	display:grid;
+	place-items:center;
+	align-content:center;
+}
+.hidden{
+	opacity:0;
+	transition:3s ease;
+}
+.shown{
+	opacity:1
+}
 #interpreter{
 	display: flex;
 	margin-top: 5rem;
@@ -87,7 +101,7 @@ a {
 }
 .card-active{
 	background: #fff !important;
-color: black;}
+	color: black;}
 .navigation{
 	font-size:2.7rem;
 	margin-top: 0px;
@@ -101,7 +115,7 @@ color: black;}
 }
 
 .home-card{
-	position: absolute;
+	position: relative;
 	top: 40%;
 	z-index: 100;
 	width: 100%;
