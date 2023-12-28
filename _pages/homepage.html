@@ -1,12 +1,51 @@
 <!DOCTYPE html>
+<script>
+	const observer = new IntersectionObserver((entires)=>{
+		entires.forEach((entry)=>{
+			console.log(entry.target);
+			if(entry.isIntersecting){
+				entry.target.classList.add('shown');
+			}else{
+				entry.target.classList.remove('shown');
+			}
+		});
+	});
+	document.addEventListener('DOMContentLoaded',()=>{
+		const hiddenElements = document.querySelectorAll('.hidden');
+		const downArrowSymbols = ['↓','↡','↧','↯','⇃','⇊','⇓','⇣','⟱','⤋','⭣','⮛','⮟','⯯','🠇','🠓','🠷','🢛']
+		const downarrows = document.querySelectorAll('.down-arrow');
+		downarrows.forEach((arrow)=>{
+			setInterval(()=>{
+				let i = Math.floor(Math.random()*downArrowSymbols.length);
+				arrow.innerHTML = downArrowSymbols[i];
+			},100);
+		}
+		);
+		hiddenElements.forEach((el)=>observer.observe(el));
+	});
+</script>
 <html>
 	[%externals%]
 	<body>
-		<div id="base-attach"></div>
-
-		<div class = "home-card">
-			[%header%]
-		</div>
+		<section class="hidden">
+			<h1>Hi</h1>
+			<h1> Welcome to this website </h1>
+			<h2> scroll fast! </h2>
+			<h3 class="down-arrow">↡</h3>
+		</section>
+		<section class="hidden">
+			<h2>There's no real reason for this scroll, it just looks cool<h2>
+					<h3 class="down-arrow">⇟</h3>
+		</section>
+		<section class="hidden">
+			<h2>I use arch BTW</h2>
+			<h3 class="down-arrow">↯</h3>
+		</section>
+		<section class="hidden" id="home">
+			<div class = "home-card">
+				[%header%]
+			</div>
+		</section>
 		[%footer%]
 	</body>
 </html>
