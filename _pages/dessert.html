@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 	[%externals%]
-	<script src="https://a-mere-peasant.github.io/dessert/online_interpreter.js" type="module"></script>
-	<script src="../assets/js/walkersdemo.js"></script>
+	<script src="../dessert/online_interpreter.js" type="module"></script>
 	<body>
 		[%header%]
 		<div class="warning">Hey! Welcome to Dessert! Read more <a style="text-decoration:underline; color:#f0773e;" href="https://github.com/a-mere-peasant/Dessert#dessert">here</a></div>
@@ -14,6 +13,10 @@
 				<div id="env-opr">Opr <br> null</div>
 				<div id ="env-oprL">L <br> null</div>
 				<div id="env-oprR">R <br> null</div>
+				<div>
+				<label for="debug-mode"> lexer-output </label>
+				<input type="checkbox" for="debug-mode" id="debug-mode"/>
+				</div>
 			</div>
 			<div id= "prg-input-console">
 				<div id="console">Hey! Welcome to dessert!</div>

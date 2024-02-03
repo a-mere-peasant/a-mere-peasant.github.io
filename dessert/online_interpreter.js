@@ -8,11 +8,11 @@ const env_oprL = document.getElementById("env-oprL");
 const console = document.getElementById("console");
 const prg_input = document.getElementById("program-input");
 interpreter.env.outlet.print = function(s){
-	insert_into_console(s);
+	insert_into_console(s,{is_error:false,isInput:false});
 }
 
 interpreter.env.outlet.error = function(s){
-	insert_into_console(s,{is_error:true,input:false});
+	insert_into_console(s,{is_error:true,isInput:false});
 }
 
 prg_input.addEventListener("keydown",function(e){
@@ -23,19 +23,20 @@ prg_input.addEventListener("keydown",function(e){
 );
 
 function input_prg(val){
-	insert_into_console(val,{is_error:false,input:true});
-	interpreter.env.inlet.input(val,false);
+	insert_into_console(val,{is_error:false,isInput:true});
+	var isDebugMode = document.getElementById("debug-mode").checked;
+	interpreter.env.inlet.input(val,isDebugMode);
 	update_env();
 	prg_input.value="";
 	console.scrollTop = console.scrollHeight;
 
 }
 
-function insert_into_console(s,{is_error=false,input=false}){
+function insert_into_console(s,{is_error=false,isInput=false}){
 	if(is_error){
 	console.innerHTML+= `\n<p class="error">${s}</p>`;
-	}else if(input){
-	console.innerHTML+= `\n<p>>${s}</p>`;
+	}else if(isInput){
+	console.innerHTML+= `\n<p>\$ ${s}</p>`;
 	}else{
 	console.innerHTML+= `\n<p>${s}</p>`;
 	}
@@ -67,7 +68,7 @@ function make_env_store(){
 	}
 	for(let i=0;i<19;i++){
 		if(i==ptrpos){
-			store_str+="^";
+			store_str+="^ ";
 		}else if(interpreter.env.isInVisualBlock && i>=start && i<=end){
 			store_str+="_ ";
 			i++;
