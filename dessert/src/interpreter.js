@@ -129,6 +129,7 @@ export class Interpreter {
 		}else{
 			env.oprL = env.store[env.ptr];
 		}
+
 	}
 	operate(){
 		if(env.opr==null) this.error(`Error : no operator found`);
@@ -139,7 +140,7 @@ export class Interpreter {
 			env.atVisualEnd = false;
 		}
 		else{
-			env.oprR = env.store[env.ptr]
+			env.oprR = env.store[env.ptr];
 		}
 		switch(env.opr){
 			case "+":
@@ -147,6 +148,12 @@ export class Interpreter {
 				break;
 			case "-":
 				this.sub();
+				break;
+			case "*":
+				this.mul();
+				break;
+			case "/":
+				this.div();
 				break;
 			case "=":
 				this.equal();
@@ -171,7 +178,7 @@ export class Interpreter {
 				start = env.ptr;
 				end = env.visualBlockStart;
 			}
-			while(start<=end){
+			while(start <= end){
 				env.visualBlock = env.visualBlock*2+env.store[start++];
 			}
 			env.isInVisualBlock = false;
@@ -185,30 +192,37 @@ export class Interpreter {
 	}
 	add(){
 		env.outlet.print(env.oprL+env.oprR);
-		env.oprL = null;
-		env.oprR = null;
-		env.opr = null;
+		this.resetop();
 	}
 	sub(){
 		env.outlet.print(env.oprL-env.oprR);
-		env.oprL = null;
-		env.oprR = null;
-		env.opr = null;
+		this.resetop();
+	}
+	mul(){
+		env.outlet.print(env.oprL*env.oprR);
+		this.resetop();
+	}
+	div(){
+		if(env.oprR ==0) {
+			env.outlet.error("Cannot divide by 0");
+			return;
+		}
+		env.outlet.print(env.oprL/env.oprR);
+		this.resetop();
 	}
 	equal(){
 		env.outlet.print(env.oprL==env.oprR);
-		env.oprL = null;
-		env.oprR = null;
-		env.opr = null;
+		this.resetop();
 	}
 	and(){
 		env.outlet.print(env.oprL&env.oprR);
-		env.oprL = null;
-		env.oprR = null;
-		env.opr = null;
+		this.resetop();
 	}
 	or(){
 		env.outlet.print(env.oprL|env.oprR);
+		this.resetop();
+	}
+	resetop(){
 		env.oprL = null;
 		env.oprR = null;
 		env.opr = null;
@@ -217,4 +231,3 @@ export class Interpreter {
 		env.outlet.error(msg);
 	}
 }
-
