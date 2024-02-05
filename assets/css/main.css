@@ -30,7 +30,6 @@ section{
 	opacity:1
 }
 .shadow-bg{
-	z-index: 101;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -273,22 +272,25 @@ footer{
 
 
 @-webkit-keyframes shadow-reveal {
-	0%{background:radial-gradient(transparent 20%,black 80%)}
-	20%{background:radial-gradient(transparent 30%,black 70%)}
-	60%{background:radial-gradient(transparent 40%,black 60%)}
-	100%{background:unset; opacity:0}
+	0%{background:radial-gradient(transparent 10%,black 90%); z-index:101;}
+	10%{background:radial-gradient(transparent 20%,black 80%); z-index:101;}
+	20%{background:radial-gradient(transparent 30%,black 70%); z-index:101;}
+	60%{background:radial-gradient(transparent 40%,black 60%); z-index:101;}
+	100%{background:unset; opacity:0; z-index:0}
 }
 @-moz-keyframes shadow-reveal {
-	0%{background:radial-gradient(transparent 20%,black 70%)}
-	20%{background:radial-gradient(transparent 30%,black 70%)}
-	60%{background:radial-gradient(transparent 40%,black 60%)}
-	100%{background:unset; opacity:0}
+	0%{background:radial-gradient(transparent 10%,black 90%); z-index:101;}
+	10%{background:radial-gradient(transparent 20%,black 80%); z-index:101;}
+	20%{background:radial-gradient(transparent 30%,black 70%); z-index:101;}
+	60%{background:radial-gradient(transparent 40%,black 60%); z-index:101;}
+	100%{background:unset; opacity:0;z-index:0}
 }
 @keyframes shadow-reveal {
-	0%{background:radial-gradient(transparent 20%,black 80%)}
-	20%{background:radial-gradient(transparent 30%,black 70%)}
-	60%{background:radial-gradient(transparent 40%,black 60%)}
-	100%{background:unset; opacity:0}
+	0%{background:radial-gradient(transparent 10%,black 90%); z-index:101;}
+	10%{background:radial-gradient(transparent 20%,black 80%); z-index:101;}
+	20%{background:radial-gradient(transparent 30%,black 70%); z-index:101;}
+	60%{background:radial-gradient(transparent 40%,black 60%); z-index:101;}
+	100%{background:unset; opacity:0;z-index:0}
 }
 @-webkit-keyframes header-gradient {
 	0%{background-position:96% 0%}
